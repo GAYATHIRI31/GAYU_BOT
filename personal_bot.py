@@ -5,9 +5,10 @@ from email.mime.multipart import MIMEMultipart
 from datetime import datetime
 
 # --- Email Config ---
-FROM_EMAIL = "gayathirik31@gmail.com"
-TO_EMAIL = "gayathiri3132000@gmail.com"
-APP_PASSWORD = "your_gmail_app_password"
+FROM_EMAIL = "backup4gayu@gmail.com"
+TO_EMAIL = "backup5gayu@gmail.com"
+APP_PASSWORD = st.secrets["GMAIL_PASSWORD"]
+
 
 NO_RESPONSES = [
     "I understand... but my heart says otherwise. Can I ask you one more time? ❤️",
