@@ -9,8 +9,8 @@ CHAT_ID = st.secrets["TELEGRAM_CHAT_ID"]
 NO_RESPONSES = [
     "I understand... but my heart says otherwise. Can I ask you one more time? 💙",
     "I respect your answer, but feelings this strong don't come easy. Won't you give us a chance? 🙏",
-    "Okay, I hear you. But just so you know — I'll still be here for her, always. Maybe someday? 🌟",
-    "Your happiness matters most to her. Even as a friend, she'll always care for you. 💙",
+    "Okay, I hear you. But just so you know , I'll still be here for her, always. Maybe someday? 🌟",
+    "Your happiness matters most to her. Even as a well wisher, she'll always care for you. 💙",
 ]
 
 # --- Send Telegram ---
@@ -150,7 +150,7 @@ elif st.session_state.step == "proposal":
         st.rerun()
     if col2.button("I need to think..."):
         st.session_state.messages.append(("user", "I need to think..."))
-        st.session_state.messages.append(("bot", "That's completely okay. 😊 GAYU understands — feelings need time. 💙"))
+        st.session_state.messages.append(("bot", "That's completely okay. 😊 GAYU understands, feelings need time. 💙"))
         send_telegram(st.session_state.messages)
         st.session_state.step = "maybe"
         st.rerun()
