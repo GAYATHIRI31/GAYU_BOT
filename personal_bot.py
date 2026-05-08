@@ -30,7 +30,7 @@ def send_telegram(chat_history):
         return False
 
 # --- UI ---
-st.set_page_config(page_title="A Message for You", page_icon="❤️")
+st.set_page_config(page_title="A Message for You", page_icon="💙")
 
 st.markdown("""
 <style>
@@ -87,8 +87,8 @@ def finish(final_bot_msg):
 if st.session_state.step == "yes":
     st.markdown("""
     <div class='fireworks'>
-        🎉❤️🎊<br><br>
-        <strong>You said YES!</strong> 😍<br><br>
+        🎉💙💙🎊<br><br>
+        <strong>You said YES!</strong> 😍😍<br><br>
         GAYU's heart is overflowing with joy right now.<br>
         This is just the beginning of something beautiful. ✨
     </div>
