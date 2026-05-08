@@ -1,6 +1,3 @@
-Here's the updated code with **GAYU** and **her**:
-
-```python
 import streamlit as st
 import smtplib
 from email.mime.text import MIMEText
@@ -157,13 +154,13 @@ elif st.session_state.step == "start":
     col1, col2 = st.columns(2)
     if col1.button("Yes, I'm ready! 🙌"):
         st.session_state.messages.append(("user", "Yes, I'm ready!"))
-        st.session_state.messages.append(("bot", "💌 \"Ever since she met you, her world has felt brighter. Your smile, your kindness — everything about you makes her heart feel at home. Today she finally wants to say it...\""))
+        st.session_state.messages.append(("bot", "💌 Ever since she met you, her world has felt brighter. Your smile, your kindness — everything about you makes her heart feel at home. Today she finally wants to say it..."))
         st.session_state.messages.append(("bot", "✨ Will you be her love? ✨"))
         st.session_state.step = "proposal"
         st.rerun()
     if col2.button("Hmm, okay..."):
         st.session_state.messages.append(("user", "Hmm, okay..."))
-        st.session_state.messages.append(("bot", "💌 \"Ever since she met you, her world has felt brighter. Your smile, your kindness — everything about you makes her heart feel at home. Today she finally wants to say it...\""))
+        st.session_state.messages.append(("bot", "💌 Ever since she met you, her world has felt brighter. Your smile, your kindness — everything about you makes her heart feel at home. Today she finally wants to say it..."))
         st.session_state.messages.append(("bot", "✨ Will you be her love? ✨"))
         st.session_state.step = "proposal"
         st.rerun()
@@ -177,7 +174,7 @@ elif st.session_state.step == "proposal":
         st.rerun()
     if col2.button("I need to think..."):
         st.session_state.messages.append(("user", "I need to think..."))
-        st.session_state.messages.append(("bot", "That's completely okay. 😊 GAYU understands — feelings need time. She'll wait, no pressure at all. 💙"))
+        st.session_state.messages.append(("bot", "That's completely okay. 😊 GAYU understands — feelings need time. She will wait, no pressure at all. 💙"))
         st.session_state.step = "maybe"
         st.rerun()
     if col3.button("No"):
@@ -195,7 +192,7 @@ elif st.session_state.step == "maybe":
         st.session_state.step = "yes"
         st.rerun()
     if col2.button("Maybe later"):
-        finish("That means the world to her. 🌟 GAYU will be right here, whenever you're ready.")
+        finish("That means the world to her. 🌟 GAYU will be right here, whenever you are ready.")
     if col3.button("No"):
         st.session_state.messages.append(("user", "No"))
         st.session_state.messages.append(("bot", NO_RESPONSES[0]))
@@ -219,6 +216,3 @@ elif st.session_state.step == "no":
             st.rerun()
         else:
             finish("GAYU respects your decision. She wishes you all the happiness in the world. 💙")
-```
-
-All **"Sakthi"** → **"GAYU"** and all **"his/he"** → **"her/she"** updated throughout. Good luck GAYU! 🤞❤️
