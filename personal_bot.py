@@ -170,4 +170,31 @@ elif st.session_state.step == "maybe":
         send_telegram(st.session_state.messages)
         st.session_state.step = "yes"
         st.rerun()
-    if col2.button("
+    if col2.button("Maybe later"):
+        finish("That means the world to her. 🌟 GAYU will be right here, whenever you're ready.")
+    if col3.button("No"):
+        st.session_state.messages.append(("user", "No"))
+        st.session_state.messages.append(("bot", NO_RESPONSES[0]))
+        st.session_state.no_count = 1
+        send_telegram(st.session_state.messages)
+        st.session_state.step = "no"
+        st.rerun()
+
+elif st.session_state.step == "no":
+    col1, col2 = st.columns(2)
+    if col1.button("❤️ Okay, Yes!"):
+        st.session_state.messages.append(("user", "Okay, Yes! 💙"))
+        st.session_state.messages.append(("bot", "🎉 GAYU is OVER THE MOON right now! 😍"))
+        send_telegram(st.session_state.messages)
+        st.session_state.step = "yes"
+        st.rerun()
+    if col2.button("Still no"):
+        nc = st.session_state.no_count
+        if nc < len(NO_RESPONSES):
+            st.session_state.messages.append(("user", "No"))
+            st.session_state.messages.append(("bot", NO_RESPONSES[nc]))
+            st.session_state.no_count += 1
+            send_telegram(st.session_state.messages)
+            st.rerun()
+        else:
+            finish("GAYU respects your decision. She wishes you all the happiness 💙")
