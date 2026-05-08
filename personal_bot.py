@@ -102,40 +102,39 @@ elif st.session_state.step == "start":
     col1, col2 = st.columns(2)
     if col1.button("Yes, I'm ready! 🙌"):
         st.session_state.messages.append(("user", "Yes, I'm ready!"))
-        st.session_state.messages.append(("bot", st.session_state.messages.append(("bot", """💌  Ever since I met you, my world has felt brighter. 
-Your smile, your presence and everything about you makes my heart feel at home. 
+        st.session_state.messages.append(("bot", """💌 Ever since I met you, my world has felt brighter. 
+Your smile, your presence, and everything about you makes my heart feel at home. 
 I want that feeling forever by being with you, sharing life with you, and supporting you through your ups and downs. 
 
 I have held onto this feeling for a long time, and you already know it. Today, I want to express it in a different way...  
-I promise you that I will never let you down in any situation. I will be always happy with you and make sure you are happy all the time.  
+I promise you that I will never let you down in any situation. I will always be happy with you and make sure you are happy all the time.  
 You are my dream, my thought that I cannot erase, and my greatest happiness.  
 
-If even a single look from you, or a small moment of attention on social media, can make me happy..  
+If even a single look from you, or a small moment of attention on social media, can make me happy...  
 imagine how joyful I would be if I had you for my whole life.  
 I’m dreaming of a future with you.
 
 “The universe whispers in cycles, showing us the same faces, the same souls, until we finally understand some connections are written in the stars, meant to return, meant to stay.”"""))
-))
         st.session_state.messages.append(("bot", "✨ Will you be my love and shall we get married? ✨"))
         send_telegram(st.session_state.messages)
         st.session_state.step = "proposal"
         st.rerun()
+
     if col2.button("Hmm, okay..."):
         st.session_state.messages.append(("user", "Hmm, okay..."))
-        st.session_state.messages.append(("bot", st.session_state.messages.append(("bot", """💌 Ever since I met you, my world has felt brighter. 
-Your smile, your presence and everything about you makes my heart feel at home. 
+        st.session_state.messages.append(("bot", """💌 Ever since I met you, my world has felt brighter. 
+Your smile, your presence, and everything about you makes my heart feel at home. 
 I want that feeling forever by being with you, sharing life with you, and supporting you through your ups and downs. 
 
 I have held onto this feeling for a long time, and you already know it. Today, I want to express it in a different way...  
-I promise you that I will never let you down in any situation. I will be always happy with you and make sure you are happy all the time.  
+I promise you that I will never let you down in any situation. I will always be happy with you and make sure you are happy all the time.  
 You are my dream, my thought that I cannot erase, and my greatest happiness.  
 
-If even a single look from you, or a small moment of attention on social media, can make me happy..  
+If even a single look from you, or a small moment of attention on social media, can make me happy...  
 imagine how joyful I would be if I had you for my whole life.  
 I’m dreaming of a future with you.
 
 “The universe whispers in cycles, showing us the same faces, the same souls, until we finally understand some connections are written in the stars, meant to return, meant to stay.”"""))
-))
         st.session_state.messages.append(("bot", "✨ Will you be my love and shall we get married? ✨"))
         send_telegram(st.session_state.messages)
         st.session_state.step = "proposal"
@@ -171,31 +170,4 @@ elif st.session_state.step == "maybe":
         send_telegram(st.session_state.messages)
         st.session_state.step = "yes"
         st.rerun()
-    if col2.button("Maybe later"):
-        finish("That means the world to her. 🌟 GAYU will be right here, whenever you're ready.")
-    if col3.button("No"):
-        st.session_state.messages.append(("user", "No"))
-        st.session_state.messages.append(("bot", NO_RESPONSES[0]))
-        st.session_state.no_count = 1
-        send_telegram(st.session_state.messages)
-        st.session_state.step = "no"
-        st.rerun()
-
-elif st.session_state.step == "no":
-    col1, col2 = st.columns(2)
-    if col1.button("❤️ Okay, Yes!"):
-        st.session_state.messages.append(("user", "Okay, Yes! 💙"))
-        st.session_state.messages.append(("bot", "🎉 GAYU is OVER THE MOON right now! 😍"))
-        send_telegram(st.session_state.messages)
-        st.session_state.step = "yes"
-        st.rerun()
-    if col2.button("Still no"):
-        nc = st.session_state.no_count
-        if nc < len(NO_RESPONSES):
-            st.session_state.messages.append(("user", "No"))
-            st.session_state.messages.append(("bot", NO_RESPONSES[nc]))
-            st.session_state.no_count += 1
-            send_telegram(st.session_state.messages)
-            st.rerun()
-        else:
-            finish("GAYU respects your decision. She wishes you all the happiness💙")
+    if col2.button("
