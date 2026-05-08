@@ -68,8 +68,6 @@ if "messages" not in st.session_state:
     ]
 if "no_count" not in st.session_state:
     st.session_state.no_count = 0
-if "telegram_sent" not in st.session_state:
-    st.session_state.telegram_sent = False
 
 # --- Display Messages ---
 for role, text in st.session_state.messages:
@@ -78,13 +76,11 @@ for role, text in st.session_state.messages:
     else:
         st.markdown(f"<div class='user-msg'>{text}</div>", unsafe_allow_html=True)
 
-# --- Send Telegram once when conversation ends ---
+# --- Finish helper ---
 def finish(final_bot_msg):
     st.session_state.messages.append(("bot", final_bot_msg))
     st.session_state.step = "done"
-    if not st.session_state.telegram_sent:
-        if send_telegram(st.session_state.messages):
-            st.session_state.telegram_sent = True
+    send_telegram(st.session_state.messages)
     st.rerun()
 
 # --- Steps ---
@@ -97,9 +93,7 @@ if st.session_state.step == "yes":
         This is just the beginning of something beautiful. ✨
     </div>
     """, unsafe_allow_html=True)
-    if not st.session_state.telegram_sent:
-        if send_telegram(st.session_state.messages):
-            st.session_state.telegram_sent = True
+    send_telegram(st.session_state.messages)
 
 elif st.session_state.step == "done":
     st.info("Thank you for your response. 💙")
@@ -108,14 +102,16 @@ elif st.session_state.step == "start":
     col1, col2 = st.columns(2)
     if col1.button("Yes, I'm ready! 🙌"):
         st.session_state.messages.append(("user", "Yes, I'm ready!"))
-        st.session_state.messages.append(("bot", "💌 \"Ever since she met you, her world has felt brighter. Your smile, your kindness — everything about you makes her heart feel at home. Today she finally wants to say it...\""))
+        st.session_state.messages.append(("bot", "💌 \"Ever since she met you, her world has felt brighter...\""))
         st.session_state.messages.append(("bot", "✨ Will you be her love? ✨"))
+        send_telegram(st.session_state.messages)
         st.session_state.step = "proposal"
         st.rerun()
     if col2.button("Hmm, okay..."):
         st.session_state.messages.append(("user", "Hmm, okay..."))
-        st.session_state.messages.append(("bot", "💌 \"Ever since she met you, her world has felt brighter. Your smile, your kindness — everything about you makes her heart feel at home. Today she finally wants to say it...\""))
+        st.session_state.messages.append(("bot", "💌 \"Ever since she met you, her world has felt brighter...\""))
         st.session_state.messages.append(("bot", "✨ Will you be her love? ✨"))
+        send_telegram(st.session_state.messages)
         st.session_state.step = "proposal"
         st.rerun()
 
@@ -123,18 +119,21 @@ elif st.session_state.step == "proposal":
     col1, col2, col3 = st.columns(3)
     if col1.button("❤️ Yes!"):
         st.session_state.messages.append(("user", "Yes! ❤️"))
-        st.session_state.messages.append(("bot", "🎉 Oh my goodness! GAYU is the happiest person alive right now! You just made her heart do a thousand somersaults. 😍"))
+        st.session_state.messages.append(("bot", "🎉 Oh my goodness! GAYU is the happiest person alive right now! 😍"))
+        send_telegram(st.session_state.messages)
         st.session_state.step = "yes"
         st.rerun()
     if col2.button("I need to think..."):
         st.session_state.messages.append(("user", "I need to think..."))
-        st.session_state.messages.append(("bot", "That's completely okay. 😊 GAYU understands — feelings need time. She'll wait, no pressure at all. 💙"))
+        st.session_state.messages.append(("bot", "That's completely okay. 😊 GAYU understands — feelings need time. 💙"))
+        send_telegram(st.session_state.messages)
         st.session_state.step = "maybe"
         st.rerun()
     if col3.button("No"):
         st.session_state.messages.append(("user", "No"))
         st.session_state.messages.append(("bot", NO_RESPONSES[0]))
         st.session_state.no_count = 1
+        send_telegram(st.session_state.messages)
         st.session_state.step = "no"
         st.rerun()
 
@@ -143,6 +142,7 @@ elif st.session_state.step == "maybe":
     if col1.button("❤️ Actually, Yes!"):
         st.session_state.messages.append(("user", "Actually, Yes! ❤️"))
         st.session_state.messages.append(("bot", "🎉 GAYU is over the moon! 😍 Thank you for giving love a chance!"))
+        send_telegram(st.session_state.messages)
         st.session_state.step = "yes"
         st.rerun()
     if col2.button("Maybe later"):
@@ -151,6 +151,7 @@ elif st.session_state.step == "maybe":
         st.session_state.messages.append(("user", "No"))
         st.session_state.messages.append(("bot", NO_RESPONSES[0]))
         st.session_state.no_count = 1
+        send_telegram(st.session_state.messages)
         st.session_state.step = "no"
         st.rerun()
 
@@ -159,6 +160,7 @@ elif st.session_state.step == "no":
     if col1.button("❤️ Okay, Yes!"):
         st.session_state.messages.append(("user", "Okay, Yes! ❤️"))
         st.session_state.messages.append(("bot", "🎉 GAYU is OVER THE MOON right now! 😍"))
+        send_telegram(st.session_state.messages)
         st.session_state.step = "yes"
         st.rerun()
     if col2.button("Still no"):
@@ -167,6 +169,7 @@ elif st.session_state.step == "no":
             st.session_state.messages.append(("user", "No"))
             st.session_state.messages.append(("bot", NO_RESPONSES[nc]))
             st.session_state.no_count += 1
+            send_telegram(st.session_state.messages)
             st.rerun()
         else:
             finish("GAYU respects your decision. She wishes you all the happiness in the world. 💙")
