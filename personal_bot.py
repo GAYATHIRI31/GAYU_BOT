@@ -102,34 +102,40 @@ elif st.session_state.step == "start":
     col1, col2 = st.columns(2)
     if col1.button("Yes, I'm ready! 🙌"):
         st.session_state.messages.append(("user", "Yes, I'm ready!"))
-        st.session_state.messages.append(("bot", "💌 Ever since I met you, my world has felt brighter. 
-Your smile, your presence, everything about you makes my heart feel at home 
-and I want that feeling forever by being with you, by sharing life with you, and by supporting you in your ups and downs. 
-I've been holding this feeling for a long time and you know that already, and today I want to express it in a different way...
-I promise you I will never let you down in any situation and I will be happy with you and make yourself happy all the time. 
-You are my dream, my thought which I can't erase and my happiness. 
-If even a single look from you or even a single social media attention from you can make me happy, 
-imagine how joyful I would be if I had you for my whole life.... I'm dreaming a future with you.
+        st.session_state.messages.append(("bot", st.session_state.messages.append(("bot", """💌 Ever since I met you, my world has felt brighter. 
+Your smile, your presence—everything about you makes my heart feel at home. 
+I want that feeling forever: being with you, sharing life with you, and supporting you through your ups and downs. 
 
-The universe whispers in cycles, showing us the same faces, the same souls, until we finally understand some connections are written in the stars, meant to return, meant to stay.
- "))
+I’ve held onto this feeling for a long time, and you already know it. Today, I want to express it in a different way...  
+I promise I will never let you down in any situation. I will be happy with you and make sure you are happy all the time.  
+You are my dream, my thought that I cannot erase, and my greatest happiness.  
+
+If even a single look from you, or a small moment of attention on social media, can make me happy—  
+imagine how joyful I would be if I had you for my whole life.  
+I’m dreaming of a future with you.
+
+“The universe whispers in cycles, showing us the same faces, the same souls, until we finally understand some connections are written in the stars, meant to return, meant to stay.”"""))
+))
         st.session_state.messages.append(("bot", "✨ Will you be my love and shall we get married? ✨"))
         send_telegram(st.session_state.messages)
         st.session_state.step = "proposal"
         st.rerun()
     if col2.button("Hmm, okay..."):
         st.session_state.messages.append(("user", "Hmm, okay..."))
-        st.session_state.messages.append(("bot", " "💌 Ever since I met you, my world has felt brighter. 
-Your smile, your presence, everything about you makes my heart feel at home 
-and I want that feeling forever by being with you, by sharing life with you, and by supporting you in your ups and downs. 
-I've been holding this feeling for a long time and you know that already, and today I want to express it in a different way...
-I promise you I will never let you down in any situation and I will be happy with you and make yourself happy all the time. 
-You are my dream, my thought which I can't erase and my happiness. 
-If even a single look from you or even a single social media attention from you can make me happy, 
-imagine how joyful I would be if I had you for my whole life.... I'm dreaming a future with you.
+        st.session_state.messages.append(("bot", st.session_state.messages.append(("bot", """💌 Ever since I met you, my world has felt brighter. 
+Your smile, your presence—everything about you makes my heart feel at home. 
+I want that feeling forever: being with you, sharing life with you, and supporting you through your ups and downs. 
 
-The universe whispers in cycles, showing us the same faces, the same souls, until we finally understand some connections are written in the stars, meant to return, meant to stay.
- ""))
+I’ve held onto this feeling for a long time, and you already know it. Today, I want to express it in a different way...  
+I promise I will never let you down in any situation. I will be happy with you and make sure you are happy all the time.  
+You are my dream, my thought that I cannot erase, and my greatest happiness.  
+
+If even a single look from you, or a small moment of attention on social media, can make me happy—  
+imagine how joyful I would be if I had you for my whole life.  
+I’m dreaming of a future with you.
+
+“The universe whispers in cycles, showing us the same faces, the same souls, until we finally understand some connections are written in the stars, meant to return, meant to stay.”"""))
+))
         st.session_state.messages.append(("bot", "✨ Will you be her love? ✨"))
         send_telegram(st.session_state.messages)
         st.session_state.step = "proposal"
