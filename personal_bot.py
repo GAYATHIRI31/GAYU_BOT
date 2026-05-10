@@ -33,9 +33,21 @@ def send_telegram(chat_history_or_text):
         return False
 
 # --- Notify on entry ---
-if "entered" not in st.session_state:
-    st.session_state.entered = True
-    send_telegram("📥 He is inside the chat now")
+# --- Notify on entry (fires every load) ---
+send_telegram("📥 He is inside the chat now")
+st.markdown("""
+<script>
+setInterval(function() {
+    navigator.sendBeacon("/?heartbeat=1");
+}, 10000);  // every 10 seconds
+</script>
+""", unsafe_allow_html=True)
+
+query_params = st.query_params
+if "heartbeat" in query_params:
+    send_telegram("💓 Still inside chat")
+    st.stop()
+
 
 # --- UI ---
 st.set_page_config(page_title="A Message for You", page_icon="💙")
