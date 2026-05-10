@@ -17,7 +17,7 @@ NO_RESPONSES = [
 def send_telegram(chat_history_or_text):
     try:
         if isinstance(chat_history_or_text, list):
-            plain_text = f"💌 Proposal Response - {datetime.now().strftime('%d %b %Y, %I:%M %p')}\n\n"
+            plain_text = f"💌 Proposal Response - {datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%d %b %Y, %I:%M %p")}\n\n"
             for role, text in chat_history_or_text:
                 label = "GAYU's Bot" if role == "bot" else "They"
                 plain_text += f"{label}: {text}\n\n"
@@ -34,7 +34,7 @@ def send_telegram(chat_history_or_text):
 
 # --- Notify on entry ---
 # --- Notify on entry (fires every load) ---
-send_telegram(f"📥He is inside the chat now - {datetime.now().strftime('%d %b %Y, %I:%M %p')}")
+send_telegram(f"📥He is inside the chat now - {datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%d %b %Y, %I:%M %p")}")
 st.markdown("""
 <script>
 setInterval(function() {
