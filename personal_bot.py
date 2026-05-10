@@ -176,8 +176,7 @@ elif st.session_state.step == "proposal":
         st.session_state.messages.append(("bot", "That's completely okay. 😊 GAYU understands, feelings need time. 💙"))
         send_telegram(st.session_state.messages)
         st.session_state.step = "maybe"
-          st.rerun()
-        st
+        st.rerun()
     if col3.button("No"):
         st.session_state.messages.append(("user", "No"))
         st.session_state.messages.append(("bot", NO_RESPONSES[0]))
