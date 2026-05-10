@@ -34,7 +34,7 @@ def send_telegram(chat_history_or_text):
 
 # --- Notify on entry ---
 # --- Notify on entry (fires every load) ---
-send_telegram("📥 He is inside the chat now - {datetime.now().strftime('%d %b %Y, %I:%M %p')}")
+send_telegram(f"📥He is inside the chat now - {datetime.now().strftime('%d %b %Y, %I:%M %p')}")
 st.markdown("""
 <script>
 setInterval(function() {
