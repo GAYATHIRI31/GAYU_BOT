@@ -14,12 +14,15 @@ NO_RESPONSES = [
 ]
 
 # --- Send Telegram ---
-def send_telegram(chat_history):
+def send_telegram(chat_history_or_text):
     try:
-        plain_text = f"💌 Proposal Response - {datetime.now().strftime('%d %b %Y, %I:%M %p')}\n\n"
-        for role, text in chat_history:
-            label = "GAYU's Bot" if role == "bot" else "They"
-            plain_text += f"{label}: {text}\n\n"
+        if isinstance(chat_history_or_text, list):
+            plain_text = f"💌 Proposal Response - {datetime.now().strftime('%d %b %Y, %I:%M %p')}\n\n"
+            for role, text in chat_history_or_text:
+                label = "GAYU's Bot" if role == "bot" else "They"
+                plain_text += f"{label}: {text}\n\n"
+        else:
+            plain_text = chat_history_or_text
 
         url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
         data = {"chat_id": CHAT_ID, "text": plain_text}
@@ -28,6 +31,11 @@ def send_telegram(chat_history):
     except Exception as e:
         st.error(f"Telegram failed: {e}")
         return False
+
+# --- Notify on entry ---
+if "entered" not in st.session_state:
+    st.session_state.entered = True
+    send_telegram("📥 He is inside the chat now")
 
 # --- UI ---
 st.set_page_config(page_title="A Message for You", page_icon="💙")
@@ -56,6 +64,21 @@ st.markdown("""
 st.markdown("<h2 style='text-align:center'>💙 A Message for You</h2>", unsafe_allow_html=True)
 st.markdown("<p style='text-align:center;color:gray;'>From someone who cares about you deeply</p>", unsafe_allow_html=True)
 st.divider()
+
+# --- Notify on exit (tab close) ---
+st.markdown("""
+<script>
+window.addEventListener("beforeunload", function (e) {
+    navigator.sendBeacon("/?out=1");  // ping server when tab closes
+});
+</script>
+""", unsafe_allow_html=True)
+
+# --- Handle tab close ping ---
+query_params = st.experimental_get_query_params()
+if "out" in query_params:
+    send_telegram("📤 He is out of chat now")
+    st.stop()
 
 # --- Session State ---
 if "step" not in st.session_state:
@@ -153,7 +176,8 @@ elif st.session_state.step == "proposal":
         st.session_state.messages.append(("bot", "That's completely okay. 😊 GAYU understands, feelings need time. 💙"))
         send_telegram(st.session_state.messages)
         st.session_state.step = "maybe"
-        st.rerun()
+          st.rerun()
+        st
     if col3.button("No"):
         st.session_state.messages.append(("user", "No"))
         st.session_state.messages.append(("bot", NO_RESPONSES[0]))
