@@ -9,7 +9,7 @@ CHAT_ID = st.secrets["TELEGRAM_CHAT_ID"]
 
 NO_RESPONSES = [
     "I understand... but my heart says otherwise. Can I ask you one more time? 💙",
-    "I respect your answer, but feelings this strong don't come easy. Won't you give us a chance? 🙏",
+    "I respect your answer, but feelings this strong don't come easy. Won't you give us a chance?",
     "Okay, I hear you. But just so you know , I'll still be here for her, always. Maybe someday? 🌟",
     "Your happiness matters most to her. Even as a well wisher, she'll always care for you. 💙",
 ]
