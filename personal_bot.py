@@ -138,17 +138,20 @@ elif st.session_state.step == "start":
     col1, col2 = st.columns(2)
     if col1.button("Yes, I'm ready! 🙌"):
         st.session_state.messages.append(("user", "Yes, I'm ready!"))
-        st.session_state.messages.append(("bot", """💌 Ever since I met you, my world has felt brighter. 
-Your smile, your presence, and everything about you makes my heart feel at home. 
-I want that feeling forever by being with you, sharing life with you, and supporting you through your ups and downs. 
+        st.session_state.messages.append(("bot", """💌 Sakthi...This bot was made specially for you, by me. If I'm using filmy dialogues, bear with me. Truth is, I don’t know how to express your value in my life. Whether we talk or not, my love for you never fades.  You hold a special place in my heart and you are always in my thoughts. Whether I’m low or happy, alone or surrounded by people… I'm thinking of you always.That’s the truth.  My world shines brighter with you in it...
 
-I have held onto this feeling for a long time, and you already know it. Today, I want to express it in a different way...  
-I promise you that I will never let you down in any situation. I will always be happy with you and make sure you are happy all the time.  
-You are my dream, my thought that I cannot erase, and my greatest happiness.  
+I’ve longed for those “96” movie moments, those “Mudhal Nee Mudivum Nee” movie moments for so many days.. Recently, I’ve had more chances to meet you, but I still haven’t expressed my love the way I truly feel it. I don’t want a dramatic or grand gestures.. I just want you in my life. I want to share my days with you, make them beautiful and adventurous..
 
-If even a single look from you, or a small moment of attention on social media, can make me happy...  
+Your smile, your presence, and everything about you make my heart feel at home. 
+I want that feeling forever to be with you, share life with you, and
+to stand by you through every high and low.
+
+I’ve hold on to this feeling for a long time, and you already know it. But today, I want to say it differently… I promise I will never let you down in any situation. I will be happy with you, and I will make sure you are happy too. You are my dream, my thought I can never erase, and my greatest happiness.
+
+If even a single look from you, or a small attention on social media, can make me happy...  
 imagine how joyful I would be if I had you for my whole life.  
-I’m dreaming of a future with you.
+I’m dreaming of that future with you.
+
 
 “The universe whispers in cycles, showing us the same faces, the same souls, until we finally understand some connections are written in the stars, meant to return, meant to stay.”"""))
         st.session_state.messages.append(("bot", "✨ Will you be my love and shall we get married? ✨"))
@@ -158,17 +161,20 @@ I’m dreaming of a future with you.
 
     if col2.button("Hmm, okay..."):
         st.session_state.messages.append(("user", "Hmm, okay..."))
-        st.session_state.messages.append(("bot", """💌 Ever since I met you, my world has felt brighter. 
+        st.session_state.messages.append(("bot", """💌Sakthi...This bot was made specially for you, by me. If I'm using filmy dialogues, bear with me. Truth is, I don’t know how to express your value in my life. Whether we talk or not, my love for you never fades.  You hold a special place in my heart and you are always in my thoughts. Whether I’m low or happy, alone or surrounded by people… I'm thinking of you always.That’s the truth.  My world shines brighter with you in it...
+
+I’ve longed for those “96” movie moments, those “Mudhal Nee Mudivum Nee” movie moments for so many days.. Recently, I’ve had more chances to meet you, but I still haven’t expressed my love the way I truly feel it. I don’t want a dramatic or grand gestures.. I just want you in my life. I want to share my days with you, make them beautiful and adventurous..
+
 Your smile, your presence, and everything about you makes my heart feel at home. 
-I want that feeling forever by being with you, sharing life with you, and supporting you through your ups and downs. 
+I want that feeling forever to be with you, share life with you and
+to stand by you through every high and low.
 
-I have held onto this feeling for a long time, and you already know it. Today, I want to express it in a different way...  
-I promise you that I will never let you down in any situation. I will always be happy with you and make sure you are happy all the time.  
-You are my dream, my thought that I cannot erase, and my greatest happiness.  
+I’ve hold on to this feeling for a long time, and you already know it. But today, I want to say it differently… I promise I will never let you down in any situation. I will be happy with you, and I will make sure you are happy too. You are my dream, my thought I can never erase, and my greatest happiness.
 
-If even a single look from you, or a small moment of attention on social media, can make me happy...  
+If even a single look from you, or a small attention on social media, can make me happy...  
 imagine how joyful I would be if I had you for my whole life.  
-I’m dreaming of a future with you.
+I’m dreaming of that future with you.
+
 
 “The universe whispers in cycles, showing us the same faces, the same souls, until we finally understand some connections are written in the stars, meant to return, meant to stay.”"""))
         st.session_state.messages.append(("bot", "✨ Will you be my love and shall we get married? ✨"))
