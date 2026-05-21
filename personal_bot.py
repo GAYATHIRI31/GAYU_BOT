@@ -138,13 +138,13 @@ elif st.session_state.step == "start":
     col1, col2 = st.columns(2)
     if col1.button("Yes, I'm ready! 🙌"):
         st.session_state.messages.append(("user", "Yes, I'm ready!"))
-        st.session_state.messages.append(("bot", """💌 Sakthi...This bot was made specially for you, by me. If I'm using filmy dialogues, bear with me. Truth is, I don’t know how to express your value in my life. Whether we talk or not, my love for you never fades.  You hold a special place in my heart and you are always in my thoughts. Whether I’m low or happy, alone or surrounded by people… I'm thinking of you always.That’s the truth.  My world shines brighter with you in it...
+        st.session_state.messages.append(("bot", """💌 Sakthi...This bot was made specially for you by me. If I'm using filmy dialogues, bear with me. Truth is, I don’t know how to express your value in my life. Whether we talk or not, my love for you never fades.  You hold a special place in my heart and you are always in my thoughts. Whether I’m low or happy, alone or surrounded by people… I'm thinking of you always.That’s the truth.  My world shines brighter with you in it...
 
 I’ve longed for those “96” movie moments, those “Mudhal Nee Mudivum Nee” movie moments for so many days.. Recently, I’ve had more chances to meet you, but I still haven’t expressed my love the way I truly feel it. I don’t want a dramatic or grand gestures.. I just want you in my life. I want to share my days with you, make them beautiful and adventurous..
 
 Your smile, your presence, and everything about you make my heart feel at home. 
-I want that feeling forever to be with you, share life with you, and
-to stand by you through every high and low.
+I want that feeling forever by being with you, sharing life with you, and
+supporting you through every high and low.
 
 I’ve hold on to this feeling for a long time, and you already know it. But today, I want to say it differently… I promise I will never let you down in any situation. I will be happy with you, and I will make sure you are happy too. You are my dream, my thought I can never erase, and my greatest happiness.
 
@@ -161,13 +161,13 @@ I’m dreaming of that future with you.
 
     if col2.button("Hmm, okay..."):
         st.session_state.messages.append(("user", "Hmm, okay..."))
-        st.session_state.messages.append(("bot", """💌Sakthi...This bot was made specially for you, by me. If I'm using filmy dialogues, bear with me. Truth is, I don’t know how to express your value in my life. Whether we talk or not, my love for you never fades.  You hold a special place in my heart and you are always in my thoughts. Whether I’m low or happy, alone or surrounded by people… I'm thinking of you always.That’s the truth.  My world shines brighter with you in it...
+        st.session_state.messages.append(("bot", """💌Sakthi...This bot was made specially for you by me. If I'm using filmy dialogues, bear with me. Truth is, I don’t know how to express your value in my life. Whether we talk or not, my love for you never fades.  You hold a special place in my heart and you are always in my thoughts. Whether I’m low or happy, alone or surrounded by people… I'm thinking of you always.That’s the truth.  My world shines brighter with you in it...
 
 I’ve longed for those “96” movie moments, those “Mudhal Nee Mudivum Nee” movie moments for so many days.. Recently, I’ve had more chances to meet you, but I still haven’t expressed my love the way I truly feel it. I don’t want a dramatic or grand gestures.. I just want you in my life. I want to share my days with you, make them beautiful and adventurous..
 
 Your smile, your presence, and everything about you makes my heart feel at home. 
-I want that feeling forever to be with you, share life with you and
-to stand by you through every high and low.
+I want that feeling forever by being with you, sharing life with you, and
+supporting you through every high and low.
 
 I’ve hold on to this feeling for a long time, and you already know it. But today, I want to say it differently… I promise I will never let you down in any situation. I will be happy with you, and I will make sure you are happy too. You are my dream, my thought I can never erase, and my greatest happiness.
 
