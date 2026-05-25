@@ -150,7 +150,7 @@ I’ve hold on to this feeling for a long time, and you already know it. But tod
 
 If even a single look from you, or a small attention on social media, can make me happy...  
 imagine how joyful I would be if I had you for my whole life.  
-I’m dreaming of that future with you.
+I’m dreaming of that future with you. WE CAN GROW TOGETHER!!!!
 
 
 “The universe whispers in cycles, showing us the same faces, the same souls, until we finally understand some connections are written in the stars, meant to return, meant to stay.”"""))
@@ -173,7 +173,7 @@ I’ve hold on to this feeling for a long time, and you already know it. But tod
 
 If even a single look from you, or a small attention on social media, can make me happy...  
 imagine how joyful I would be if I had you for my whole life.  
-I’m dreaming of that future with you.
+I’m dreaming of that future with you.WE CAN GROW TOGETHER!!!!
 
 
 “The universe whispers in cycles, showing us the same faces, the same souls, until we finally understand some connections are written in the stars, meant to return, meant to stay.”"""))
